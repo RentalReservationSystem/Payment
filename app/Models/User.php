@@ -5,11 +5,11 @@ class User extends Model{
 
 public $timestamps = false; // <-- para dili na need ang updated at @ created at column
 
-protected $primaryKey = 'productId'; //<-- this is a primary key
+protected $primaryKey = 'payment_id'; //<-- this is a primary key
 
-protected $table = 'product';
+protected $table = 'payment';
 // column sa table
 protected $fillable = [
-'productName', 'description','category','price'
+'payment_category', 'payment_date','amount'
 ];
 }

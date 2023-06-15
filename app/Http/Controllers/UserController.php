@@ -7,6 +7,8 @@ private $request;
 public function __construct(Request $request){
 $this->request = $request;
 }
+
+//GET PRODUCTS
 public function getUsers(){
 $users = User::all();
 return response()->json($users, 200);
@@ -17,22 +19,21 @@ return response()->json($users, 200);
 * @return Illuminate\Http\Response
 */
 
-//GET PRODUCTS
-public function index()
-{
-$users = User::all();
-//return $this->successResponse($users);
 
-return response()->json($users, 200);
-}
+// public function index()
+// {
+// $users = User::all();
+// //return $this->successResponse($users);
+
+// return response()->json($users, 200);
+// }
 
 //ADD PRODUCT
 public function add(Request $request ){
 $rules = [
-'productName' => 'required|max:20',
-'description' => 'required|max:100',
-'category' => 'required|max:20',
-'price' => 'required|numeric|min:1|not_in:0',
+'payment_category' => 'required|max:20',
+'payment_date' => 'required|max:20',
+'amount' => 'required|numeric|min:1|not_in:0',
 ];
 $this->validate($request,$rules);
 $user = User::create($request->all());
@@ -63,10 +64,9 @@ return response()->json($user, 200);
 public function update(Request $request,$id)
 {
 $rules = [
-    'productName' => 'required|max:20',
-    'description' => 'required|max:100',
-    'category' => 'required|max:20',
-    'price' => 'required|numeric|min:1|not_in:0',
+    'payment_category' => 'required|max:20',
+    'payment_date' => 'required|max:20',
+    'amount' => 'required|numeric|min:1|not_in:0',
 ];
 $this->validate($request, $rules);
 $user = User::findOrFail($id);

@@ -20,10 +20,10 @@ $router->group(['prefix' => 'api'], function () use ($router) {
 $router->get('/users',['uses' => 'UserController@getUsers']);
 });
 // more simple routes
-$router->get('/products',['uses' => 'UserController@getUsers']);
-$router->get('/getproducts', 'UserController@index'); // get all users
-$router->post('/addproducts', 'UserController@add'); // create new user
-$router->get('/getproducts/{id}', 'UserController@show'); // get user by id
-$router->put('/updateproducts/{id}', 'UserController@update'); // update user
-$router->patch('/updateproducts/{id}', 'UserController@update'); // update user
-$router->delete('/deleteproducts/{id}', 'UserController@delete'); // delete
+$router->get('/payments',['uses' => 'UserController@getUsers']);
+$router->get('/getpayments', 'UserController@index'); // get all users
+$router->post('/addpayments', 'UserController@add'); // create new user
+$router->get('/getpayments/{id}', 'UserController@show'); // get user by id
+$router->put('/updatepayments/{id}', 'UserController@update'); // update user
+$router->patch('/updatepayments/{id}', 'UserController@update'); // update user
+$router->delete('/deletepayments/{id}', 'UserController@delete'); // delete
